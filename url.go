@@ -60,13 +60,16 @@ func (u *url) SetLoc(loc string) *url {
 }
 
 // 最后一次修改时间
-func (u *url) SetLastmod(lastMod time.Time) *url {
-	u.LastMod = lastMod.Format(time.RFC3339)
+func (u *url) SetLastMod(lastMod time.Time, layout string) *url {
+	if layout == "" {
+		layout = "2006-01-02"
+	}
+	u.LastMod = lastMod.Format(layout)
 	return u
 }
 
 // 更新频率
-func (u *url) SetChangefreq(freq ChangeFreq) *url {
+func (u *url) SetChangeFreq(freq ChangeFreq) *url {
 	u.ChangeFreq = freq
 	return u
 }
