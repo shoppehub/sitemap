@@ -17,7 +17,7 @@ var (
 
 type urlSet struct {
 	*base
-	XMLName    xml.Name `xml:"http://www.sitemaps.org/schemas/Sitemap/0.9 urlset"`
+	XMLName    xml.Name `xml:"http://www.google.com/schemas/sitemap/0.9 urlset"`
 	XMLNSVideo string   `xml:"xmlns:video,attr,omitempty"`
 	XMLNSImage string   `xml:"xmlns:image,attr,omitempty"`
 	XMLNSNews  string   `xml:"xmlns:news,attr,omitempty"`
@@ -115,7 +115,7 @@ type Map struct {
 }
 
 type siteMapIndex struct {
-	XMLName xml.Name `xml:"http://www.sitemaps.org/schemas/Sitemap/0.9 sitemapindex"`
+	XMLName xml.Name `xml:"http://www.google.com/schemas/sitemap/0.9 sitemapindex"`
 	SiteMap []Map
 }
 
